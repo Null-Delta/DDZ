@@ -51,8 +51,8 @@ private func problem2_2(i: Int, k: Int, prefix: String, used: String) {
 
 func Problem2() {
     problem2_1(i: 1, k: 0, prefix: "")
-    try! solution2_1.write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_1.txt"), atomically: true, encoding: .utf8)
+    try! ("total count: \(solution2_1.split(separator: "\n").count)\n" + solution2_1).write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_1.txt"), atomically: true, encoding: .utf8)
 
     problem2_2(i: 1, k: 0, prefix: "", used: "")
-    try! solution2_2.write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_2.txt"), atomically: true, encoding: .utf8)
+    try! ("total count: \(solution2_2.split(separator: "\n").count)\n" + solution2_2).write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_2.txt"), atomically: true, encoding: .utf8)
 }

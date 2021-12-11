@@ -37,8 +37,6 @@ private func problem3_1(i: Int, k: Int, prefix: String) {
     }
 }
 
-
-
 //C(6,2) * C(6,2) * C(4,2) * C(4,2) * 2 = 16200
 
 private func problem3_2(i: Int, prefix: String, repeats: [String]) {
@@ -76,9 +74,9 @@ private func problem3_2(i: Int, prefix: String, repeats: [String]) {
 func Problem3() {
     problem3_1(i: 1, k: 1, prefix: "")
     
-    try! solution3_1.write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution3_1.txt"), atomically: true, encoding: .utf8)
+    try! ("total count: \(solution3_1.split(separator: "\n").count)\n" + solution3_1).write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution3_1.txt"), atomically: true, encoding: .utf8)
     
     problem3_2(i: 1, prefix: "", repeats: [])
         
-    try! solution3_2.write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution3_2.txt"), atomically: true, encoding: .utf8)
+    try! ("total count: \(solution3_2.split(separator: "\n").count)\n" + solution3_2).write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution3_2.txt"), atomically: true, encoding: .utf8)
 }

@@ -11,6 +11,7 @@
 		8697C3872765028000F71AF1 /* Problem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C3862765028000F71AF1 /* Problem2.swift */; };
 		8697C38C27650D6000F71AF1 /* Problem3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C38B27650D6000F71AF1 /* Problem3.swift */; };
 		8697C38E276514C800F71AF1 /* HelpFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C38D276514C800F71AF1 /* HelpFuncs.swift */; };
+		8697C39027651A8E00F71AF1 /* Problem4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C38F27651A8E00F71AF1 /* Problem4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 		8697C3882765048F00F71AF1 /* DDZ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DDZ.entitlements; sourceTree = "<group>"; };
 		8697C38B27650D6000F71AF1 /* Problem3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem3.swift; sourceTree = "<group>"; };
 		8697C38D276514C800F71AF1 /* HelpFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFuncs.swift; sourceTree = "<group>"; };
+		8697C38F27651A8E00F71AF1 /* Problem4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8697C3862765028000F71AF1 /* Problem2.swift */,
 				8697C38B27650D6000F71AF1 /* Problem3.swift */,
 				8697C38D276514C800F71AF1 /* HelpFuncs.swift */,
+				8697C38F27651A8E00F71AF1 /* Problem4.swift */,
 			);
 			path = DDZ;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8697C38C27650D6000F71AF1 /* Problem3.swift in Sources */,
+				8697C39027651A8E00F71AF1 /* Problem4.swift in Sources */,
 				862EF02B2764FB670073246B /* main.swift in Sources */,
 				8697C38E276514C800F71AF1 /* HelpFuncs.swift in Sources */,
 				8697C3872765028000F71AF1 /* Problem2.swift in Sources */,
