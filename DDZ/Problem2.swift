@@ -3,6 +3,7 @@ import Foundation
 private var solution2_1: String = ""
 private var solution2_2: String = ""
 
+//C(2,5) * 5 * 5 * 5 = 1250
 private func problem2_1(i: Int, k: Int, prefix: String) {
     if i == 5 {
         if k == 1 {
@@ -23,6 +24,7 @@ private func problem2_1(i: Int, k: Int, prefix: String) {
     }
 }
 
+//C(2,5) * C(5,1) * C(4,1) * C(3,1) = 600
 private func problem2_2(i: Int, k: Int, prefix: String, used: String) {
     if i == 5 {
         if k == 1 {
@@ -51,6 +53,6 @@ func Problem2() {
     problem2_1(i: 1, k: 0, prefix: "")
     try! solution2_1.write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_1.txt"), atomically: true, encoding: .utf8)
 
-    problem2_2(i: 1, k: 0, prefix: "", used: "")    
+    problem2_2(i: 1, k: 0, prefix: "", used: "")
     try! solution2_2.write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_2.txt"), atomically: true, encoding: .utf8)
 }
