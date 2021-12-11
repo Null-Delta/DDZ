@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		862EF02B2764FB670073246B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF02A2764FB670073246B /* main.swift */; };
+		8697C3872765028000F71AF1 /* Problem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C3862765028000F71AF1 /* Problem2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		862EF0272764FB670073246B /* DDZ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DDZ; sourceTree = BUILT_PRODUCTS_DIR; };
 		862EF02A2764FB670073246B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8697C3862765028000F71AF1 /* Problem2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem2.swift; sourceTree = "<group>"; };
+		8697C3882765048F00F71AF1 /* DDZ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DDZ.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,9 @@
 		862EF0292764FB670073246B /* DDZ */ = {
 			isa = PBXGroup;
 			children = (
+				8697C3882765048F00F71AF1 /* DDZ.entitlements */,
 				862EF02A2764FB670073246B /* main.swift */,
+				8697C3862765028000F71AF1 /* Problem2.swift */,
 			);
 			path = DDZ;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				862EF02B2764FB670073246B /* main.swift in Sources */,
+				8697C3872765028000F71AF1 /* Problem2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +251,14 @@
 		862EF02F2764FB670073246B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DDZ/DDZ.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G7668ALM57;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zed.null.dz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -256,9 +266,12 @@
 		862EF0302764FB670073246B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DDZ/DDZ.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G7668ALM57;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zed.null.dz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
