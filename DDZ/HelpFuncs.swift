@@ -1,8 +1,18 @@
 //
-//  HelpFuncs.swift
-//  DDZ
-//
-//  Created by Rustam Khakhuk on 11.12.2021.
+//        \`--.
+//         )  _`-.
+//        .  : `. .        MEOW
+//        : _   '  \       (ОПЯТЬ НАГАВНОКОДИЛ)
+//        ; *` _.   `--._
+//        `-.-'          `-.
+//          ;       `       `.
+//          :.       .        \
+//          . \  .   :   .-'   .
+//          '  `-.;  ;  '      :
+//          :  '  |    ;       ;-.
+//          ; '   : :`-:     _.`| ;
+//  [bug] .-' /  .-' ; .-`- +'  `-'
+//        `--*   `--* `---'
 //
 
 import Foundation
@@ -13,4 +23,39 @@ extension Array {
         newArray.append(value)
         return newArray
     }
+}
+
+extension OutputStream {
+
+    /// Write `String` to `OutputStream`
+    ///
+    /// - parameter string:                The `String` to write.
+    /// - parameter encoding:              The `String.Encoding` to use when writing the string. This will default to `.utf8`.
+    /// - parameter allowLossyConversion:  Whether to permit lossy conversion when writing the string. Defaults to `false`.
+    ///
+    /// - returns:                         Return total number of bytes written upon success. Return `-1` upon failure.
+
+    func write(_ string: String, encoding: String.Encoding = .utf8, allowLossyConversion: Bool = false) {
+        if let data = string.data(using: encoding, allowLossyConversion: allowLossyConversion) {
+            data.withUnsafeBytes { (bytes: UnsafePointer<UInt8>) -> Int in
+                var pointer = bytes
+                var bytesRemaining = data.count
+                var totalBytesWritten = 0
+
+                while bytesRemaining > 0 {
+                    let bytesWritten = self.write(pointer, maxLength: bytesRemaining)
+                    if bytesWritten < 0 {
+                        return -1
+                    }
+
+                    bytesRemaining -= bytesWritten
+                    pointer += bytesWritten
+                    totalBytesWritten += bytesWritten
+                }
+
+                return totalBytesWritten
+            }
+        }
+    }
+
 }

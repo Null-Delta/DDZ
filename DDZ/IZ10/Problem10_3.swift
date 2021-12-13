@@ -17,7 +17,8 @@
 
 import Foundation
 
-private var solution10_3: String = ""
+private var solution10_3 = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution10_3.txt"), append: true)!
+
 private var alphabet = ["a","b","c","d","e","f","g","h","j","k"]
 
 // 711: C(10,1) * C(9,7) * C(9,2) * 2 = 25920
@@ -30,37 +31,50 @@ private var alphabet = ["a","b","c","d","e","f","g","h","j","k"]
 // result = 2178000
 
 private func problem10_3(i: Int, prefix: String, k: Int) {
+    let newI = i + 1
+    
     if i == 9 {
         if k == 2 {
             alphabet.forEach { char in
                 if !prefix.contains(char) {
-                    solution10_3 += prefix + char + "\n"
+                    iter += 1
+                    solution10_3.write(prefix + char + "\n")
                 }
             }
         } else {
             alphabet.forEach { char in
                 if prefix.contains(char) {
-                    solution10_3 += prefix + char + "\n"
+                    iter += 1
+                    solution10_3.write(prefix + char + "\n")
                 }
             }
         }
     } else if (7...8).contains(i) && i - k == 7 {
         alphabet.forEach { char in
             if !prefix.contains(char) {
-                problem10_3(i: i + 1, prefix: prefix + char, k: k + 1)
+                let newPref = prefix + char
+                let newK = k + 1
+                problem10_3(i: newI, prefix: newPref, k: newK)
             }
         }
     } else {
         alphabet.forEach { char in
             if k < 3 || prefix.contains(char) {
-                problem10_3(i: i + 1, prefix: prefix + char, k: k + (prefix.contains(char) ? 0 : 1))
+                let newPref = prefix + char
+                let newK = k + (prefix.contains(char) ? 0 : 1)
+                problem10_3(i: newI, prefix: newPref, k: newK)
             }
         }
     }
 }
 
 func Problem_IZ_10_3() {
+    print("Problem10.3:")
+
+    solution10_3.open()
     problem10_3(i: 1, prefix: "", k: 0)
+    solution10_3.close()
     
-    try! ("total count: \(solution10_3.split(separator: "\n").count)\n" + solution10_3).write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution_iz_10_3.txt"), atomically: true, encoding: .utf8)
+    print(iter)
+    iter = 0
 }

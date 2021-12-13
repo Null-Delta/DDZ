@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		860577F52765F34D00BE6279 /* Problem10_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860577F42765F34D00BE6279 /* Problem10_3.swift */; };
 		860577F72765FC9C00BE6279 /* Problem10_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860577F62765FC9C00BE6279 /* Problem10_4.swift */; };
+		862754A42767283000EAA1A6 /* Problem1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862754A32767283000EAA1A6 /* Problem1.swift */; };
 		862EF02B2764FB670073246B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF02A2764FB670073246B /* main.swift */; };
 		8697C3872765028000F71AF1 /* Problem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C3862765028000F71AF1 /* Problem2.swift */; };
 		8697C38C27650D6000F71AF1 /* Problem3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C38B27650D6000F71AF1 /* Problem3.swift */; };
@@ -16,6 +17,7 @@
 		8697C39027651A8E00F71AF1 /* Problem4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C38F27651A8E00F71AF1 /* Problem4.swift */; };
 		8697C392276550A200F71AF1 /* Problem5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C391276550A200F71AF1 /* Problem5.swift */; };
 		8697C3942765555C00F71AF1 /* Problem6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697C3932765555C00F71AF1 /* Problem6.swift */; };
+		86DC154327664DC0008715E9 /* Problem10_5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC154227664DC0008715E9 /* Problem10_5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +35,7 @@
 /* Begin PBXFileReference section */
 		860577F42765F34D00BE6279 /* Problem10_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem10_3.swift; sourceTree = "<group>"; };
 		860577F62765FC9C00BE6279 /* Problem10_4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem10_4.swift; sourceTree = "<group>"; };
+		862754A32767283000EAA1A6 /* Problem1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem1.swift; sourceTree = "<group>"; };
 		862EF0272764FB670073246B /* DDZ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DDZ; sourceTree = BUILT_PRODUCTS_DIR; };
 		862EF02A2764FB670073246B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8697C3862765028000F71AF1 /* Problem2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem2.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		8697C38F27651A8E00F71AF1 /* Problem4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem4.swift; sourceTree = "<group>"; };
 		8697C391276550A200F71AF1 /* Problem5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem5.swift; sourceTree = "<group>"; };
 		8697C3932765555C00F71AF1 /* Problem6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem6.swift; sourceTree = "<group>"; };
+		86DC154227664DC0008715E9 /* Problem10_5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem10_5.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			children = (
 				860577F42765F34D00BE6279 /* Problem10_3.swift */,
 				860577F62765FC9C00BE6279 /* Problem10_4.swift */,
+				86DC154227664DC0008715E9 /* Problem10_5.swift */,
 			);
 			path = IZ10;
 			sourceTree = "<group>";
@@ -83,15 +88,16 @@
 		862EF0292764FB670073246B /* DDZ */ = {
 			isa = PBXGroup;
 			children = (
+				862EF02A2764FB670073246B /* main.swift */,
 				860577F12765F31400BE6279 /* IZ10 */,
 				8697C3882765048F00F71AF1 /* DDZ.entitlements */,
-				862EF02A2764FB670073246B /* main.swift */,
+				862754A32767283000EAA1A6 /* Problem1.swift */,
 				8697C3862765028000F71AF1 /* Problem2.swift */,
 				8697C38B27650D6000F71AF1 /* Problem3.swift */,
-				8697C38D276514C800F71AF1 /* HelpFuncs.swift */,
 				8697C38F27651A8E00F71AF1 /* Problem4.swift */,
 				8697C391276550A200F71AF1 /* Problem5.swift */,
 				8697C3932765555C00F71AF1 /* Problem6.swift */,
+				8697C38D276514C800F71AF1 /* HelpFuncs.swift */,
 			);
 			path = DDZ;
 			sourceTree = "<group>";
@@ -155,9 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8697C38C27650D6000F71AF1 /* Problem3.swift in Sources */,
+				862754A42767283000EAA1A6 /* Problem1.swift in Sources */,
 				8697C39027651A8E00F71AF1 /* Problem4.swift in Sources */,
 				8697C3942765555C00F71AF1 /* Problem6.swift in Sources */,
 				862EF02B2764FB670073246B /* main.swift in Sources */,
+				86DC154327664DC0008715E9 /* Problem10_5.swift in Sources */,
 				860577F72765FC9C00BE6279 /* Problem10_4.swift in Sources */,
 				8697C392276550A200F71AF1 /* Problem5.swift in Sources */,
 				8697C38E276514C800F71AF1 /* HelpFuncs.swift in Sources */,

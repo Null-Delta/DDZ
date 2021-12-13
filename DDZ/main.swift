@@ -1,9 +1,31 @@
+//
+//        \`--.
+//         )  _`-.
+//        .  : `. .        MEOW
+//        : _   '  \       (ОПЯТЬ НАГАВНОКОДИЛ)
+//        ; *` _.   `--._
+//        `-.-'          `-.
+//          ;       `       `.
+//          :.       .        \
+//          . \  .   :   .-'   .
+//          '  `-.;  ;  '      :
+//          :  '  |    ;       ;-.
+//          ; '   : :`-:     _.`| ;
+//  [bug] .-' /  .-' ; .-`- +'  `-'
+//        `--*   `--* `---'
+//
+
 import Foundation
 
-//Problem2()
-//Problem3()
-//Problem4()
-//Problem5()
-//Problem6()
+var iter: Int = 0
+
+Problem1()
+Problem2()
+Problem3()
+Problem4()
+Problem5()
+Problem6()
+
 Problem_IZ_10_3()
-Problem_IZ_10_4()
+//Problem_IZ_10_4()
+Problem_IZ_10_5()

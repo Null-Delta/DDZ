@@ -15,26 +15,34 @@
 //        `--*   `--* `---'
 //
 import Foundation
+private var solutior2_1_file = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_1.txt"), append: true)!
+private var solutior2_2_file = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_2.txt"), append: true)!
 
-private var solution2_1: String = ""
-private var solution2_2: String = ""
 
 //C(2,5) * 5 * 5 * 5 = 1250
 private func problem2_1(i: Int, k: Int, prefix: String) {
     if i == 5 {
         if k == 1 {
-            solution2_1 += prefix + "a" + "\n"
+            solutior2_1_file.write(prefix + "a" + "\n")
+            iter += 1
+            //solution2_1 += prefix + "a" + "\n"
         } else {
             ["b","c","d","e","f"].forEach { ch in
-                solution2_1 += prefix + ch + "\n"
+            solutior2_1_file.write(prefix + ch + "\n")
+                iter += 1
             }
         }
     } else if i == 4 && k == 0 {
-        problem2_1(i: i + 1, k: 1, prefix: prefix + "a")
+        let value = prefix + "a"
+        let newI = i + 1
+        problem2_1(i: newI, k: 1, prefix: value)
     } else {
         ["a","b","c","d","e","f"].forEach { ch in
             if !(k == 2 && ch == "a") {
-                problem2_1(i: i + 1, k: k + (ch == "a" ? 1 : 0), prefix: prefix + ch)
+                let value = prefix + ch
+                let newI = i + 1
+                let newK = k + (ch == "a" ? 1 : 0)
+                problem2_1(i: newI, k: newK, prefix: value)
             }
         }
     }
@@ -44,21 +52,30 @@ private func problem2_1(i: Int, k: Int, prefix: String) {
 private func problem2_2(i: Int, k: Int, prefix: String, used: String) {
     if i == 5 {
         if k == 1 {
-            solution2_2 += prefix + "a" + "\n"
+            solutior2_2_file.write(prefix + "a" + "\n")
+            iter += 1
         } else {
             ["b","c","d","e","f"].forEach { ch in
                 if !used.contains(ch) {
-                    solution2_2 += prefix + ch + "\n"
+                    solutior2_2_file.write(prefix + ch + "\n")
+                    iter += 1
                 }
             }
         }
     } else if i == 4 && k == 0 {
-        problem2_2(i: i + 1, k: 1, prefix: prefix + "a", used: used)
+        let newI = i + 1
+        let newPref = prefix + "a"
+        
+        problem2_2(i: newI, k: 1, prefix: newPref, used: used)
     } else {
         ["a","b","c","d","e","f"].forEach { ch in
             if !used.contains(ch) {
                 if !(k == 2 && ch == "a") {
-                    problem2_2(i: i + 1, k: k + (ch == "a" ? 1 : 0), prefix: prefix + ch, used: ch == "a" ? used : used + ch)
+                    let newI = i + 1
+                    let newK = k + (ch == "a" ? 1 : 0)
+                    let newUsed = ch == "a" ? used : used + ch
+                    
+                    problem2_2(i: newI, k: newK, prefix: prefix + ch, used: newUsed)
                 }
             }
         }
@@ -66,9 +83,18 @@ private func problem2_2(i: Int, k: Int, prefix: String, used: String) {
 }
 
 func Problem2() {
-    problem2_1(i: 1, k: 0, prefix: "")
-    try! ("total count: \(solution2_1.split(separator: "\n").count)\n" + solution2_1).write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_1.txt"), atomically: true, encoding: .utf8)
+    print("Problem2:")
 
+    solutior2_1_file.open()
+    problem2_1(i: 1, k: 0, prefix: "")
+    solutior2_1_file.close()
+    print(iter)
+    iter = 0
+    
+    
+    solutior2_2_file.open()
     problem2_2(i: 1, k: 0, prefix: "", used: "")
-    try! ("total count: \(solution2_2.split(separator: "\n").count)\n" + solution2_2).write(to: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution2_2.txt"), atomically: true, encoding: .utf8)
+    solutior2_2_file.close()
+    print(iter)
+    iter = 0
 }
