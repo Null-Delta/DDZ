@@ -19,13 +19,14 @@ import Foundation
 
 var iter: Int = 0
 
-Problem1()
-Problem2()
-Problem3()
-Problem4()
-Problem5()
-Problem6()
+//Problem1()
+//Problem2()
+//Problem3()
+//Problem4()
+//Problem5()
+//Problem6()
+Problem7()
 
-Problem_IZ_10_3()
+//Problem_IZ_10_3()
 //Problem_IZ_10_4()
-Problem_IZ_10_5()
+//Problem_IZ_10_5()
