@@ -59,3 +59,13 @@ extension OutputStream {
     }
 
 }
+
+extension String {
+    subscript(i: Int) -> String {
+        return String(self[self.index(startIndex, offsetBy: i)..<self.index(startIndex, offsetBy: i + 1)])
+    }
+    
+    subscript(r: Range<Int>) -> String {
+        return String(self[self.index(startIndex, offsetBy: r.startIndex)..<self.index(startIndex, offsetBy: r.endIndex)])
+    }
+}

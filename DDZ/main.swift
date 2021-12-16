@@ -26,6 +26,10 @@ var iter: Int = 0
 //Problem5()
 //Problem6()
 Problem7()
+//Problem8()
+
+//Problem11()
+Problem12()
 
 //Problem_IZ_10_3()
 //Problem_IZ_10_4()
