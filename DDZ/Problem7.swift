@@ -25,27 +25,6 @@ private var solution7_1_file = OutputStream(url: Bundle.main.executableURL!.dele
 private var solution7_2_file = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution7_2.txt"), append: true)!
 
 
-
-private func generateMatrix(of: String) -> String {
-    var offset: Int = 0
-    var result = ""
-    for i in 0..<p {
-        for j in 0..<i {
-            result += of[of.index(of.startIndex, offsetBy: (p - 1) * (j) - (j * (j + 1)) / 2 + i - 1 + 10)..<of.index(of.startIndex, offsetBy: (p - 1) * (j) - (j * (j + 1)) / 2 + i + 10)] + " "
-        }
-        result += "0 "
-        
-        for j in i + 1..<p {
-            result += "\(of[of.index(of.startIndex, offsetBy: j - i - 1 + offset)..<of.index(of.startIndex, offsetBy: j - i - 1 + offset + 1)]) "
-        }
-        offset += p - i - 1
-        result += "\n"
-    }
-    
-    
-    return result
-}
-
 //C(C(p,2),q) = C(C(5,2),5) = C(10,5) = 2 * 7 * 2 * 9 = 63 * 4 = 252
 private func problem7_1(i: Int, k: Int, prefix: String) {
     let newI = i + 1
@@ -81,6 +60,8 @@ private func problem7_2(i: Int, prefix: String) {
 }
 
 func Problem7() {
+    print("Problem7:")
+
     solution7_1_file.open()
     problem7_1(i: 1,k: 0,prefix: "")
     solution7_1_file.close()

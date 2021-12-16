@@ -18,6 +18,7 @@
 import Foundation
 // 1 2 3 4    3 2 1 4
 
+
 // 0 1 1 1    0 0 1 0
 // 1 0 0 0 -> 0 0 1 0
 // 1 0 0 0    1 1 0 1
@@ -35,15 +36,16 @@ private var matrix1: String = ""
 private var matrix2: String = ""
 private var n: Int = 0
 
-private func convertToArray(matrix: String) -> [(Int, [Int])] {
+func convertToArray(matrix: String) -> [(Int, [Int])] {
     var result: [(Int,[Int])] = []
+    let size = Int(sqrt(Double(matrix.count)))
     
-    for i in 0..<n {
+    for i in 0..<size {
         result.append((i, []))
     }
     
-    for i in 0..<n {
-        for j in 0..<n where j != i && matrix[i * n + j] == "1" {
+    for i in 0..<size {
+        for j in 0..<size where j != i && matrix[i * size + j] == "1" {
             if !result[i].1.contains(j) {
                 result[i].1.append(j)
             }
@@ -54,10 +56,12 @@ private func convertToArray(matrix: String) -> [(Int, [Int])] {
     return result
 }
 
-private func convertToMatrix(m: [(Int, [Int])]) -> String {
+func convertToMatrix(m: [(Int, [Int])]) -> String {
     var result = ""
-    for i in 0..<n {
-        for j in 0..<n {
+    let size = m.count
+
+    for i in 0..<size {
+        for j in 0..<size {
             result += m[i].1.contains(j) ? "1" : "0"
         }
     }
@@ -65,7 +69,7 @@ private func convertToMatrix(m: [(Int, [Int])]) -> String {
     return result
 }
 
-private func replace(matrix: [(Int, [Int])], from: Int, to: Int) -> [(Int,[Int])] {
+func replace(matrix: [(Int, [Int])], from: Int, to: Int) -> [(Int,[Int])] {
     var result = matrix
     
     result[from].0 = to
@@ -85,19 +89,13 @@ private func replace(matrix: [(Int, [Int])], from: Int, to: Int) -> [(Int,[Int])
     return result
 }
 
-private func printMatrix(matrix: String) {
-    for i in 0..<n {
-        print(matrix[i * n..<i * n + n])
+func printMatrix(matrix: String) {
+    let size = Int(sqrt(Double(matrix.count)))
+
+    for i in 0..<size {
+        print(matrix[i * size..<i * size + size])
     }
     print()
-}
-
-private func isEqual(matrix1: String, matrix2: String) -> Bool {
-    return matrix1 == matrix2
-}
-
-private func isAotumorfizm(matrix1: String, matrix2: String) -> Bool {
-    return true
 }
 
 private func problem8(i: Int, prefix: String) {
@@ -126,19 +124,25 @@ private func problem8(i: Int, prefix: String) {
 
 
 
-private func toTransArray(value: String) -> [(Int, Int)] {
+func toTransArray(value: String) -> [(Int, Int)] {
     var result: [(Int, Int)] = []
     
     for i in 0..<value.count {
+        var subArray: [(Int, Int)] = []
         for j in i..<value.count where Int(value[j])! < Int(value[i])! {
-            result.append((Int(value[i])!,Int(value[j])!))
+            subArray.append((Int(value[i])!,Int(value[j])!))
         }
-    }
         
+        subArray.sort(by: {(v1,v2) in v1.1 > v2.1})
+        result.append(contentsOf: subArray)
+    }
+            
     return result
 }
 
 func Problem8() {
+    print("Problem8:")
+
     print("Введите размерность матрицы:")
     n = Int(readLine()!)!
     

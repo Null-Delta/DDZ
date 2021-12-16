@@ -22,27 +22,6 @@ private var q = 5
 private var edgeCount = 20
 
 private var solution11_file = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution11.txt"), append: true)!
-
-private func generateMatrix(of: String) -> String {
-    var offset: Int = 0
-    var result = ""
-    for i in 0..<p {
-        for j in 0..<i {
-            result += of[of.index(of.startIndex, offsetBy: (p - 1) * (j) - (j * (j + 1)) / 2 + i - 1 + 10)..<of.index(of.startIndex, offsetBy: (p - 1) * (j) - (j * (j + 1)) / 2 + i + 10)] + " "
-        }
-        result += "0 "
-        
-        for j in i + 1..<p {
-            result += "\(of[of.index(of.startIndex, offsetBy: j - i - 1 + offset)..<of.index(of.startIndex, offsetBy: j - i - 1 + offset + 1)]) "
-        }
-        offset += p - i - 1
-        result += "\n"
-    }
-    
-    
-    return result
-}
-
 //(C(20,5) =
 private func problem11(i: Int, k: Int, prefix: String) {
     let newI = i + 1
@@ -65,6 +44,8 @@ private func problem11(i: Int, k: Int, prefix: String) {
 }
 
 func Problem11() {
+    print("Problem11:")
+
     solution11_file.open()
     problem11(i: 1, k: 0, prefix: "")
     solution11_file.close()
