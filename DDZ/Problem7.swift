@@ -24,8 +24,7 @@ private var edgeCount = 10
 private var solution7_1_file = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution7_1.txt"), append: true)!
 private var solution7_2_file = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution7_2.txt"), append: true)!
 
-
-//C(C(p,2),q) = C(C(5,2),5) = C(10,5) = 2 * 7 * 2 * 9 = 63 * 4 = 252
+// C(C(p,2),q) = C(C(5,2),5) = C(10,5) = 2 * 7 * 2 * 9 = 63 * 4 = 252
 private func problem7_1(i: Int, k: Int, prefix: String) {
     let newI = i + 1
     let newK = k + 1
