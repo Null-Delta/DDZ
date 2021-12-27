@@ -32,6 +32,8 @@ var iter: Int = 0
 //Problem11()
 //Problem12()
 
-Problem_IZ_10_1()
+//Problem_IZ_10_1()
 //Problem_IZ_10_3()
 //Problem_IZ_10_5()
+
+Problem912()

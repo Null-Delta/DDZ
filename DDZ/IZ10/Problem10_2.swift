@@ -18,12 +18,11 @@
 import Foundation
 private var n = 10
 private var k = 3
+private var m = 4
 
-private var solution10_1 = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution10_1.txt"), append: true)!
+private var solution10_2 = OutputStream(url: Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("solution10_2.txt"), append: true)!
 
 private var alphabet = ["a","b","c","d","e","f","g","h","j","k"]
-
-// C(10,3) * C(10,2) * C(8,2) * C(6,2) * C(7,1) * C(4,3) * 6 = 381 024 000
 
 private func problem10_1(i: Int, prefix: String, chars: [(String, Int)]) {
     let newI = i + 1
@@ -35,11 +34,11 @@ private func problem10_1(i: Int, prefix: String, chars: [(String, Int)]) {
     
     if i == n + 1 {
         iter += 1
-//        if iter % 1000000 == 0 {
-//            print(iter)
-//        }
+        if iter % 1000000 == 0 {
+            print(iter)
+        }
         
-        solution10_1.write(prefix + "\n")
+        solution10_2.write(prefix + "\n")
     } else if n - i - k == (6 - 1 - chars[0].1 - chars[1].1 - chars[2].1 - chars[3].1) {
         subProblem10_1(i: i, prefix: prefix, chars: chars)
     } else {
@@ -129,12 +128,12 @@ private func subProblem10_1(i: Int, prefix: String, chars: [(String, Int)]) {
     }
 }
 
-func Problem_IZ_10_1() {
-    print("Problem10.1:")
+func Problem_IZ_10_2() {
+    print("Problem10.2:")
 
-    solution10_1.open()
+    solution10_2.open()
     problem10_1(i: 1, prefix: "", chars: [("",0),("",0),("",0), ("",0)])
-    solution10_1.close()
+    solution10_2.close()
     
     print(iter)
     iter = 0
