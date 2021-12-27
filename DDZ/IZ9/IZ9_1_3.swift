@@ -88,6 +88,8 @@ private func problem913_notEmpty(sets: [String], i: Int) {
 }
 
 func Problem913() {
+    print("Problem 9.1.3:")
+
     solution9_1_3_NotEmpty.open()
     problem913_notEmpty(sets: ["a","a","a","a","a"], i: 0)
     solution9_1_3_NotEmpty.close()

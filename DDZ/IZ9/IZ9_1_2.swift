@@ -43,12 +43,12 @@ private func problem912_notEmpty(sets: [[String]], i: Int) {
     
     sets.forEach { s in
         if s.isEmpty {
-            solution9_1_2_NotEmpty.write("\(sets[0]) \(sets[1]) \(sets[2]) \(sets[3]) \(sets[4])")
             emptyCount += 1
         }
     }
     
     if i == alphabet.count {
+        solution9_1_2_NotEmpty.write("\(sets[0]) \(sets[1]) \(sets[2]) \(sets[3]) \(sets[4])")
         iter += 1
     }
     else if alphabet.count - i == emptyCount {
@@ -76,6 +76,8 @@ private func problem912_notEmpty(sets: [[String]], i: Int) {
 }
 
 func Problem912() {
+    print("Problem 9.1.2:")
+
     solution9_1_2_NotEmpty.open()
     problem912_notEmpty(sets: [[],[],[],[],[]], i: 0)
     solution9_1_2_NotEmpty.close()
