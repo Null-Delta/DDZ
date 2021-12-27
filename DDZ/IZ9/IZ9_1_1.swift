@@ -14,6 +14,8 @@ private var solution9_1_1_NotEmpty = OutputStream(url: Bundle.main.executableURL
 
 private func problem911_Empty(sets: [String], i: Int) {
     
+    let newI = i + 1
+    
     var emptyCount = 0
     
     sets.forEach { s in
@@ -26,18 +28,18 @@ private func problem911_Empty(sets: [String], i: Int) {
         if !isSorted(sets: sets) {
             return
         }
-        solution9_1_1_Empty.write("\(sets[0]) \(sets[1]) \(sets[2]) \(sets[3]) \(sets[4])")
+        solution9_1_1_Empty.write("[\(sets[0])] [\(sets[1])] [\(sets[2])] [\(sets[3])] [\(sets[4])]\n")
         iter += 1
     } else {
-        problem911_Empty(sets: [sets[0].appending(alphabet[i]), sets[1], sets[2], sets[3], sets[4]], i: i + 1)
+        problem911_Empty(sets: [sets[0].appending(alphabet[i]), sets[1], sets[2], sets[3], sets[4]], i: newI)
     
-        problem911_Empty(sets: [sets[0], sets[1].appending(alphabet[i]), sets[2], sets[3], sets[4]], i: i + 1)
+        problem911_Empty(sets: [sets[0], sets[1].appending(alphabet[i]), sets[2], sets[3], sets[4]], i: newI)
     
-        problem911_Empty(sets: [sets[0], sets[1], sets[2].appending(alphabet[i]), sets[3], sets[4]], i: i + 1)
+        problem911_Empty(sets: [sets[0], sets[1], sets[2].appending(alphabet[i]), sets[3], sets[4]], i: newI)
         
-        problem911_Empty(sets: [sets[0], sets[1], sets[2], sets[3].appending(alphabet[i]), sets[4]], i: i + 1)
+        problem911_Empty(sets: [sets[0], sets[1], sets[2], sets[3].appending(alphabet[i]), sets[4]], i: newI)
         
-        problem911_Empty(sets: [sets[0], sets[1], sets[2], sets[3], sets[4].appending(alphabet[i])], i: i + 1)
+        problem911_Empty(sets: [sets[0], sets[1], sets[2], sets[3], sets[4].appending(alphabet[i])], i: newI)
     }
 }
 
@@ -63,11 +65,13 @@ private func lenght(s: String) -> Int {
 
 private func problem911_notEmpty(sets: [String], i: Int) {
     
+    let newI = i + 1
+
     var emptyCount = 0
     
     sets.forEach { s in
         if s.isEmpty {
-            solution9_1_1_NotEmpty.write("\(sets[0]) \(sets[1]) \(sets[2]) \(sets[3]) \(sets[4])")
+            solution9_1_1_NotEmpty.write("[\(sets[0])] [\(sets[1])] [\(sets[2])] [\(sets[3])] [\(sets[4])]\n")
             emptyCount += 1
         }
     }
@@ -80,26 +84,26 @@ private func problem911_notEmpty(sets: [String], i: Int) {
         iter += 1
     }
     else if alphabet.count - i == emptyCount {
-        if sets[0].isEmpty { problem911_notEmpty(sets: [sets[0].appending(alphabet[i]), sets[1], sets[2], sets[3], sets[4]], i: i + 1) }
+        if sets[0].isEmpty { problem911_notEmpty(sets: [sets[0].appending(alphabet[i]), sets[1], sets[2], sets[3], sets[4]], i: newI) }
     
-        if sets[1].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1].appending(alphabet[i]), sets[2], sets[3], sets[4]], i: i + 1) }
+        if sets[1].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1].appending(alphabet[i]), sets[2], sets[3], sets[4]], i: newI) }
     
-        if sets[2].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1], sets[2].appending(alphabet[i]), sets[3], sets[4]], i: i + 1) }
+        if sets[2].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1], sets[2].appending(alphabet[i]), sets[3], sets[4]], i: newI) }
         
-        if sets[3].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3].appending(alphabet[i]), sets[4]], i: i + 1) }
+        if sets[3].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3].appending(alphabet[i]), sets[4]], i: newI) }
         
-        if sets[4].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3], sets[4].appending(alphabet[i])], i: i + 1) }
+        if sets[4].isEmpty { problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3], sets[4].appending(alphabet[i])], i: newI) }
         
     } else {
-        problem911_notEmpty(sets: [sets[0].appending(alphabet[i]), sets[1], sets[2], sets[3], sets[4]], i: i + 1)
+        problem911_notEmpty(sets: [sets[0].appending(alphabet[i]), sets[1], sets[2], sets[3], sets[4]], i: newI)
     
-        problem911_notEmpty(sets: [sets[0], sets[1].appending(alphabet[i]), sets[2], sets[3], sets[4]], i: i + 1)
+        problem911_notEmpty(sets: [sets[0], sets[1].appending(alphabet[i]), sets[2], sets[3], sets[4]], i: newI)
     
-        problem911_notEmpty(sets: [sets[0], sets[1], sets[2].appending(alphabet[i]), sets[3], sets[4]], i: i + 1)
+        problem911_notEmpty(sets: [sets[0], sets[1], sets[2].appending(alphabet[i]), sets[3], sets[4]], i: newI)
         
-        problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3].appending(alphabet[i]), sets[4]], i: i + 1)
+        problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3].appending(alphabet[i]), sets[4]], i: newI)
         
-        problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3], sets[4].appending(alphabet[i])], i: i + 1)
+        problem911_notEmpty(sets: [sets[0], sets[1], sets[2], sets[3], sets[4].appending(alphabet[i])], i: newI)
     }
 }
 

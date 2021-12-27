@@ -22,7 +22,7 @@ private func problem912_Empty(sets: [[String]], i: Int) {
     }
     
     if i == alphabet.count {
-        solution9_1_2_Empty.write("\(sets[0]) \(sets[1]) \(sets[2]) \(sets[3]) \(sets[4])")
+        solution9_1_2_Empty.write("[\(sets[0])] [\(sets[1])] [\(sets[2])] [\(sets[3])] [\(sets[4])]\n")
         iter += 1
     } else {
         problem912_Empty(sets: [sets[0].appending(alphabet[i]), sets[1], sets[2], sets[3], sets[4]], i: i + 1)
@@ -48,7 +48,7 @@ private func problem912_notEmpty(sets: [[String]], i: Int) {
     }
     
     if i == alphabet.count {
-        solution9_1_2_NotEmpty.write("\(sets[0]) \(sets[1]) \(sets[2]) \(sets[3]) \(sets[4])")
+        solution9_1_2_NotEmpty.write("[\(sets[0])] [\(sets[1])] [\(sets[2])] [\(sets[3])] [\(sets[4])]\n")
         iter += 1
     }
     else if alphabet.count - i == emptyCount {

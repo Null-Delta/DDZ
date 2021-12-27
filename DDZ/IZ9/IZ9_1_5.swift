@@ -37,7 +37,7 @@ private func problem915_notEmpty(sets: [String], i: Int) {
     
     sets.forEach { s in
         if s.isEmpty {
-            solution9_1_5_NotEmpty.write("\(sets[0]) \(sets[1]) \(sets[2]) \(sets[3]) \(sets[4])")
+            solution9_1_5_NotEmpty.write("[\(sets[0])] [\(sets[1])] [\(sets[2])] [\(sets[3])] [\(sets[4])]\n")
             emptyCount += 1
         }
     }
