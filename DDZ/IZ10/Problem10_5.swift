@@ -50,7 +50,7 @@ private func problem10_5(i: Int, nk: Int, ek: Int, prefix: String) {
         if ek != 2 {
             let newEK = ek + 1
             let newPref = prefix + "е"
-            problem10_5(i: newI, nk: nk, ek: ek + 1, prefix: newPref)
+            problem10_5(i: newI, nk: nk, ek: newEK, prefix: newPref)
         }
     } else {
         alphabet.forEach { char in

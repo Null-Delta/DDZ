@@ -23,6 +23,12 @@ extension Array {
         newArray.append(value)
         return newArray
     }
+    
+    func inserting(_ value: Element, at: Int) -> Array {
+        var newArray = self
+        newArray.insert(value, at: at)
+        return newArray
+    }
 }
 
 extension OutputStream {
@@ -67,5 +73,12 @@ extension String {
     
     subscript(r: Range<Int>) -> String {
         return String(self[self.index(startIndex, offsetBy: r.startIndex)..<self.index(startIndex, offsetBy: r.endIndex)])
+    }
+    
+    func inserting(_ value: String, at: Int) -> String {
+        var newString = self
+        newString.insert(Character(value), at: newString.index(newString.startIndex, offsetBy: at))
+        
+        return newString
     }
 }
